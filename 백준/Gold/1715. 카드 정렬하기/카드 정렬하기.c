@@ -1,5 +1,5 @@
 #include <stdio.h>  // 카드 정렬하기
-#include <stdlib.h>
+
 
 typedef struct
 {
