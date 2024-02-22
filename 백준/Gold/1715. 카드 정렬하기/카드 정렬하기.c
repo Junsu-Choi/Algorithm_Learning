@@ -69,7 +69,7 @@ int main()
 		push(&h, num);
 	}
 
-	long long int sum = 0;
+	int sum = 0;
 	while (h.size > 1)
 	{
 		int a, b;
@@ -78,7 +78,7 @@ int main()
 		sum += (a + b);
 		push(&h, a + b);
 	}
-	printf("%lld", sum);
+	printf("%d", sum);
 
 
 	return 0;
