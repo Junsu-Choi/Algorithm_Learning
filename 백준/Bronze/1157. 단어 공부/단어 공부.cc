@@ -22,13 +22,11 @@ int main() {
 
     transform(all(s), s.begin(), ::toupper);
 
-    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
     vector<int> v;
     v.resize(30);
     for (int i=0; i<s.length(); i++) {
-        for (int j=0; j<alphabet.length(); j++) {
-            if (s[i] == alphabet[j]) {
+        for (int j=0; j<26; j++) {
+            if (s[i] == 'A'+j) {
                 v[j]++;
             }
         }
@@ -36,7 +34,7 @@ int main() {
 
     int max=0, duplicateData=-1;
     int maxIndex;
-    for (int i=0; i<alphabet.length(); i++) {
+    for (int i=0; i<26; i++) {
         if (max < v[i]) {
             max = v[i];
             maxIndex = i;
@@ -47,9 +45,9 @@ int main() {
     }
 
     if (max == duplicateData) {
-        cout << "?" << endl;
+        cout << "?" << endl; 
     }
-    else cout << alphabet[maxIndex] << endl;
+    else cout << (char)('A'+maxIndex) << endl;
 
     exit(0);
 }
